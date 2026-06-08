@@ -3,6 +3,8 @@ const menuToggle = document.querySelector("[data-menu-toggle]");
 const menu = document.querySelector("#main-menu");
 const fixedButton = document.querySelector(".floating-whatsapp");
 const year = document.querySelector("[data-year]");
+const sections = [...document.querySelectorAll("main[id], main section[id]")];
+const navItems = [...document.querySelectorAll(".nav-links a")];
 
 const updateHeader = () => {
   header?.classList.toggle("is-scrolled", window.scrollY > 12);
@@ -15,8 +17,24 @@ const closeMenu = () => {
   menuToggle?.setAttribute("aria-label", "Abrir menu");
 };
 
+const updateActiveNav = () => {
+  let current = sections[0];
+
+  sections.forEach((section) => {
+    if (section.offsetTop <= window.scrollY + 130) {
+      current = section;
+    }
+  });
+
+  navItems.forEach((item) => {
+    item.classList.toggle("is-active", item.getAttribute("href") === `#${current?.id}`);
+  });
+};
+
 updateHeader();
 window.addEventListener("scroll", updateHeader, { passive: true });
+updateActiveNav();
+window.addEventListener("scroll", updateActiveNav, { passive: true });
 
 menuToggle?.addEventListener("click", () => {
   const isOpen = menu?.classList.toggle("is-open");
