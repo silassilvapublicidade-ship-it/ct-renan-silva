@@ -61,9 +61,10 @@ textarea {
   top: 12px;
   left: 50%;
   z-index: 50;
-  display: flex;
+  display: grid;
+  grid-template-columns: 40px 1fr auto;
   align-items: center;
-  justify-content: space-between;
+  column-gap: 12px;
   width: calc(100% - 24px);
   max-width: 1248px;
   min-height: var(--header-height);
@@ -80,27 +81,6 @@ textarea {
 .site-header.is-scrolled {
   background: rgba(8, 8, 8, 0.98);
   box-shadow: 0 18px 54px rgba(0, 0, 0, 0.38);
-}
-
-.brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  min-width: 0;
-  font-family: "Poppins", Arial, sans-serif;
-  font-size: 0.82rem;
-  font-weight: 900;
-  letter-spacing: 0;
-  text-transform: uppercase;
-}
-
-.brand img {
-  width: 42px;
-  height: 42px;
-  flex: 0 0 auto;
-  object-fit: cover;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: var(--radius);
 }
 
 .nav-links {
@@ -135,6 +115,7 @@ textarea {
 }
 
 .header-actions {
+  grid-column: 3;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -902,19 +883,17 @@ h3 {
   .site-header {
     top: 14px;
     width: calc(100% - 28px);
+    grid-template-columns: minmax(180px, 1fr) auto minmax(180px, 1fr);
     min-height: var(--header-height);
     padding: 8px 10px 8px 16px;
-  }
-
-  .brand img {
-    width: 46px;
-    height: 46px;
   }
 
   .nav-links {
     position: static;
     display: flex;
+    grid-column: 2;
     align-items: center;
+    justify-content: center;
     gap: clamp(12px, 2.2vw, 26px);
     padding: 0;
     background: transparent;
@@ -938,6 +917,11 @@ h3 {
     padding: 10px 18px;
     font-size: 0.82rem;
     text-transform: none;
+  }
+
+  .header-actions {
+    grid-column: 3;
+    justify-self: end;
   }
 
   .cta-short {
@@ -1041,13 +1025,6 @@ h3 {
 }
 
 @media (max-width: 420px) {
-  .brand span {
-    max-width: 114px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
   .header-cta {
     padding: 10px 11px;
   }
