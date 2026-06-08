@@ -11,9 +11,12 @@
   --red-2: #b70f16;
   --silver: #d9dde2;
   --max-width: 1160px;
-  --header-height: 58px;
+  --header-height: 54px;
   --radius: 8px;
   --shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
+  --glass-bg: linear-gradient(145deg, rgba(255, 255, 255, 0.105), rgba(255, 255, 255, 0.035));
+  --glass-border: rgba(255, 255, 255, 0.16);
+  --glass-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14), 0 20px 60px rgba(0, 0, 0, 0.2);
 }
 
 * {
@@ -68,19 +71,19 @@ textarea {
   width: calc(100% - 24px);
   max-width: 1248px;
   min-height: var(--header-height);
-  padding: 7px 8px 7px 12px;
-  background: rgba(13, 12, 12, 0.94);
-  border: 1px solid rgba(255, 255, 255, 0.13);
-  border-radius: 9px;
-  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.22);
-  backdrop-filter: blur(18px);
+  padding: 6px 8px;
+  background: rgba(12, 12, 12, 0.54);
+  border: 1px solid var(--glass-border);
+  border-radius: 14px;
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(22px) saturate(1.25);
   transform: translateX(-50%);
   transition: background 180ms ease, box-shadow 180ms ease;
 }
 
 .site-header.is-scrolled {
-  background: rgba(8, 8, 8, 0.98);
-  box-shadow: 0 18px 54px rgba(0, 0, 0, 0.38);
+  background: rgba(8, 8, 8, 0.68);
+  box-shadow: var(--glass-shadow);
 }
 
 .nav-links {
@@ -104,7 +107,7 @@ textarea {
   padding: 13px 12px;
   border-radius: var(--radius);
   color: rgba(255, 255, 255, 0.78);
-  font-size: 0.9rem;
+  font-size: 0.84rem;
   font-weight: 800;
 }
 
@@ -126,9 +129,10 @@ textarea {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 40px;
-  padding: 10px 13px;
-  background: var(--white);
+  min-height: 38px;
+  padding: 9px 12px;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.42);
   border-radius: var(--radius);
   color: var(--black);
   font-size: 0.76rem;
@@ -142,8 +146,8 @@ textarea {
 
 .menu-toggle {
   display: inline-grid;
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   place-items: center;
   padding: 0;
   background: rgba(255, 255, 255, 0.08);
@@ -314,12 +318,12 @@ h3 {
 
 .hero-card {
   width: min(100%, 390px);
-  padding: 18px;
-  background: rgba(8, 8, 8, 0.74);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 16px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(14px);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(22px) saturate(1.2);
 }
 
 .hero-card img {
@@ -474,7 +478,8 @@ h3 {
 .placeholder-note {
   margin: 22px 0 0;
   padding: 16px;
-  background: var(--black);
+  background: rgba(8, 8, 8, 0.68);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-left: 4px solid var(--red);
   border-radius: var(--radius);
   color: var(--white);
@@ -497,15 +502,13 @@ h3 {
 
 .feature-card {
   position: relative;
-  min-height: 226px;
-  padding: 22px;
+  min-height: 202px;
+  padding: 20px;
   overflow: hidden;
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.035));
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.12),
-    0 24px 70px rgba(0, 0, 0, 0.16);
-  backdrop-filter: blur(18px);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(22px) saturate(1.2);
 }
 
 .feature-card::before {
@@ -529,7 +532,7 @@ h3 {
   height: 50px;
   place-items: center;
   margin-bottom: 22px;
-  background: rgba(225, 18, 27, 0.18);
+  background: rgba(225, 18, 27, 0.14);
   border: 1px solid rgba(225, 18, 27, 0.54);
   border-radius: var(--radius);
   color: var(--white);
@@ -551,11 +554,12 @@ h3 {
   display: grid;
   grid-template-rows: auto minmax(64px, auto) 1fr;
   gap: 14px;
-  padding: 22px;
+  padding: 20px;
   overflow: hidden;
-  background: var(--white);
-  border: 1px solid rgba(8, 8, 8, 0.12);
-  box-shadow: 0 18px 50px rgba(8, 8, 8, 0.08);
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(18px) saturate(1.15);
 }
 
 .objective-card::before {
@@ -599,8 +603,10 @@ h3 {
   padding: 18px;
   overflow: hidden;
   background: #191919;
-  border: 1px solid var(--line);
+  border: 1px solid var(--glass-border);
   border-radius: var(--radius);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(16px);
 }
 
 .gallery-item::after {
@@ -637,9 +643,11 @@ h3 {
 
 .testimonial-card {
   min-height: 150px;
-  padding: 22px;
-  background: var(--white);
-  border: 1px solid rgba(8, 8, 8, 0.12);
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(18px) saturate(1.15);
 }
 
 .testimonial-card p {
@@ -663,9 +671,11 @@ h3 {
 }
 
 .faq-list details {
-  background: rgba(255, 255, 255, 0.055);
-  border: 1px solid var(--line);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
   border-radius: var(--radius);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(18px) saturate(1.15);
 }
 
 .faq-list summary {
@@ -737,10 +747,12 @@ h3 {
 }
 
 .contact-list > div {
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.055);
-  border: 1px solid var(--line);
+  padding: 18px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
   border-radius: var(--radius);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(18px) saturate(1.15);
 }
 
 .contact-list strong {
@@ -767,9 +779,11 @@ h3 {
 .map-card {
   min-height: 320px;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.055);
-  border: 1px solid var(--line);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
   border-radius: var(--radius);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(18px) saturate(1.15);
 }
 
 .map-card iframe {
@@ -877,7 +891,7 @@ h3 {
 
 @media (min-width: 920px) {
   :root {
-    --header-height: 64px;
+    --header-height: 58px;
   }
 
   .site-header {
@@ -885,7 +899,7 @@ h3 {
     width: calc(100% - 28px);
     grid-template-columns: minmax(180px, 1fr) auto minmax(180px, 1fr);
     min-height: var(--header-height);
-    padding: 8px 10px 8px 16px;
+    padding: 6px 8px;
   }
 
   .nav-links {
@@ -903,7 +917,7 @@ h3 {
 
   .nav-links a {
     padding: 0;
-    font-size: 0.82rem;
+    font-size: 0.78rem;
     text-transform: uppercase;
   }
 
@@ -913,9 +927,9 @@ h3 {
   }
 
   .header-cta {
-    min-height: 44px;
-    padding: 10px 18px;
-    font-size: 0.82rem;
+    min-height: 40px;
+    padding: 9px 16px;
+    font-size: 0.8rem;
     text-transform: none;
   }
 
