@@ -5,6 +5,8 @@ const fixedButton = document.querySelector(".floating-whatsapp");
 const year = document.querySelector("[data-year]");
 const sections = [...document.querySelectorAll("main[id], main section[id]")];
 const navItems = [...document.querySelectorAll(".nav-links a")];
+const startSteps = [...document.querySelectorAll("[data-start-step]")];
+const startProgressItems = [...document.querySelectorAll(".start-progress span")];
 
 const updateHeader = () => {
   header?.classList.toggle("is-scrolled", window.scrollY > 12);
@@ -28,6 +30,16 @@ const updateActiveNav = () => {
 
   navItems.forEach((item) => {
     item.classList.toggle("is-active", item.getAttribute("href") === `#${current?.id}`);
+  });
+};
+
+const updateStartStep = (index) => {
+  startSteps.forEach((step, stepIndex) => {
+    step.classList.toggle("is-active", stepIndex === index);
+  });
+
+  startProgressItems.forEach((item, itemIndex) => {
+    item.classList.toggle("is-active", itemIndex <= index);
   });
 };
 
@@ -64,6 +76,12 @@ document.querySelectorAll(".faq-list details").forEach((item) => {
     document.querySelectorAll(".faq-list details").forEach((otherItem) => {
       if (otherItem !== item) otherItem.removeAttribute("open");
     });
+  });
+});
+
+startSteps.forEach((step, index) => {
+  ["mouseenter", "focus", "click"].forEach((eventName) => {
+    step.addEventListener(eventName, () => updateStartStep(index));
   });
 });
 
