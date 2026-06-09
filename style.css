@@ -61,42 +61,38 @@ textarea {
 
 .site-header {
   position: fixed;
-  top: 12px;
-  left: 50%;
+  top: 14px;
+  right: 14px;
+  left: auto;
   z-index: 50;
-  display: grid;
-  grid-template-columns: 40px 1fr auto;
-  align-items: center;
-  column-gap: 12px;
-  width: calc(100% - 24px);
-  max-width: 1248px;
-  min-height: var(--header-height);
-  padding: 6px 8px;
-  background: rgba(12, 12, 12, 0.54);
-  border: 1px solid var(--glass-border);
-  border-radius: 14px;
-  box-shadow: var(--glass-shadow);
-  backdrop-filter: blur(22px) saturate(1.25);
-  transform: translateX(-50%);
-  transition: background 180ms ease, box-shadow 180ms ease;
+  width: auto;
+  min-height: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  transform: none;
 }
 
 .site-header.is-scrolled {
-  background: rgba(8, 8, 8, 0.68);
-  box-shadow: var(--glass-shadow);
+  background: transparent;
+  box-shadow: none;
 }
 
 .nav-links {
-  position: absolute;
-  top: calc(100% + 8px);
-  right: 0;
-  left: 0;
+  position: fixed;
+  top: 70px;
+  right: 14px;
+  left: 14px;
   display: none;
   padding: 10px;
   background: rgba(13, 12, 12, 0.98);
   border: 1px solid rgba(255, 255, 255, 0.13);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+  max-height: calc(100svh - 86px);
+  overflow-y: auto;
 }
 
 .nav-links.is-open {
@@ -119,15 +115,11 @@ textarea {
 }
 
 .header-actions {
-  grid-column: 3;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  flex: 0 0 auto;
+  display: block;
 }
 
 .header-cta {
-  display: inline-flex;
+  display: none;
   align-items: center;
   justify-content: center;
   min-height: 44px;
@@ -151,11 +143,14 @@ textarea {
   height: 44px;
   place-items: center;
   padding: 0;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(8, 8, 8, 0.54);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: var(--radius);
   color: var(--white);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(18px) saturate(1.2);
   cursor: pointer;
+  transition: background 180ms ease, transform 180ms ease;
 }
 
 .menu-toggle span {
@@ -163,6 +158,13 @@ textarea {
   height: 2px;
   background: currentColor;
   border-radius: 99px;
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus-visible,
+.menu-open .menu-toggle {
+  background: rgba(225, 18, 27, 0.86);
+  transform: translateY(-1px);
 }
 
 .hero {
@@ -1521,10 +1523,28 @@ h3 {
 
   .site-header {
     top: 14px;
+    right: auto;
+    left: 50%;
+    display: grid;
+    align-items: center;
+    column-gap: 12px;
     width: calc(100% - 28px);
+    max-width: 1248px;
     grid-template-columns: minmax(180px, 1fr) auto minmax(180px, 1fr);
     min-height: var(--header-height);
     padding: 6px 8px;
+    background: rgba(12, 12, 12, 0.54);
+    border: 1px solid var(--glass-border);
+    border-radius: 14px;
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: blur(22px) saturate(1.25);
+    transform: translateX(-50%);
+    transition: background 180ms ease, box-shadow 180ms ease;
+  }
+
+  .site-header.is-scrolled {
+    background: rgba(8, 8, 8, 0.68);
+    box-shadow: var(--glass-shadow);
   }
 
   .nav-links {
@@ -1538,6 +1558,8 @@ h3 {
     background: transparent;
     border: 0;
     box-shadow: none;
+    max-height: none;
+    overflow: visible;
   }
 
   .nav-links a {
@@ -1553,6 +1575,7 @@ h3 {
   }
 
   .header-cta {
+    display: inline-flex;
     min-height: 40px;
     padding: 9px 16px;
     font-size: 0.8rem;
@@ -1561,7 +1584,11 @@ h3 {
 
   .header-actions {
     grid-column: 3;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     justify-self: end;
+    flex: 0 0 auto;
   }
 
   .cta-short {
