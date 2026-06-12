@@ -337,6 +337,42 @@
             </p>
           </div>
 
+          <div class="objective-advisor" aria-label="Escolha um objetivo para ver como o CT pode ajudar">
+            <div class="advisor-tabs" role="tablist" aria-label="Objetivos de treino">
+              <button class="advisor-tab is-active" type="button" data-objective="forca" role="tab" aria-selected="true">
+                For&ccedil;a e sa&uacute;de
+              </button>
+              <button class="advisor-tab" type="button" data-objective="emagrecimento" role="tab" aria-selected="false">
+                Emagrecimento
+              </button>
+              <button class="advisor-tab" type="button" data-objective="massa" role="tab" aria-selected="false">
+                Ganho de massa
+              </button>
+              <button class="advisor-tab" type="button" data-objective="condicionamento" role="tab" aria-selected="false">
+                Condicionamento
+              </button>
+              <button class="advisor-tab" type="button" data-objective="acompanhamento" role="tab" aria-selected="false">
+                Acompanhamento
+              </button>
+            </div>
+
+            <div class="advisor-panel" role="tabpanel" aria-live="polite">
+              <p class="advisor-label">Objetivo selecionado</p>
+              <h3 data-advisor-title>For&ccedil;a, sa&uacute;de e evolu&ccedil;&atilde;o f&iacute;sica</h3>
+              <p data-advisor-text>
+                Treino organizado para desenvolver t&eacute;cnica, const&acirc;ncia e progress&atilde;o segura dentro da muscula&ccedil;&atilde;o.
+              </p>
+              <ul data-advisor-list>
+                <li>Avalia&ccedil;&atilde;o inicial para entender rotina e limita&ccedil;&otilde;es</li>
+                <li>Treino montado pelo Renan e acess&iacute;vel pelo celular</li>
+                <li>Acompanhamento para ajustar o caminho quando necess&aacute;rio</li>
+              </ul>
+              <a class="advisor-cta" href="https://wa.me/5514991311285?text=Ol%C3%A1%2C%20vim%20pelo%20site%20do%20CT%20Renan%20Silva%20e%20quero%20entender%20qual%20treino%20combina%20com%20meu%20objetivo." target="_blank" rel="noopener">
+                Quero entender meu objetivo
+              </a>
+            </div>
+          </div>
+
           <div class="objective-grid">
             <article class="objective-card">
               <span>01</span>
@@ -402,6 +438,24 @@
             <div class="phone-card">
               <span>Treino acess&iacute;vel pelo celular</span>
               <h3>Montado pelo Renan, organizado no app</h3>
+              <div class="app-screen" aria-hidden="true">
+                <div class="app-screen-top">
+                  <span></span>
+                  <strong>Rotina A</strong>
+                </div>
+                <div class="app-row">
+                  <span>Supino</span>
+                  <i></i>
+                </div>
+                <div class="app-row">
+                  <span>Remada</span>
+                  <i></i>
+                </div>
+                <div class="app-row">
+                  <span>Agachamento</span>
+                  <i></i>
+                </div>
+              </div>
               <ul>
                 <li>Exerc&iacute;cios organizados por rotina</li>
                 <li>Mais clareza para executar o treino</li>
@@ -459,27 +513,27 @@
           </div>
 
           <div class="gallery-grid">
-            <figure class="gallery-item">
+            <figure class="gallery-item" tabindex="0">
               <img src="assets/area-musculacao.jpg" alt="Ambiente interno da &aacute;rea de muscula&ccedil;&atilde;o do CT Renan Silva" loading="lazy" />
               <figcaption>Estrutura</figcaption>
             </figure>
-            <figure class="gallery-item">
+            <figure class="gallery-item" tabindex="0">
               <img src="assets/equipamentos-ct.jpg" alt="Equipamentos de muscula&ccedil;&atilde;o do CT Renan Silva" loading="lazy" />
               <figcaption>Equipamentos</figcaption>
             </figure>
-            <figure class="gallery-item">
+            <figure class="gallery-item" tabindex="0">
               <img src="assets/treino-acompanhado.jpg" alt="Aluno treinando no CT Renan Silva com equipamentos e halteres" loading="lazy" />
               <figcaption>Treino acompanhado</figcaption>
             </figure>
-            <figure class="gallery-item">
+            <figure class="gallery-item" tabindex="0">
               <img src="assets/pesos-livres.jpg" alt="Pesos livres e halteres do CT Renan Silva" loading="lazy" />
               <figcaption>Pesos livres</figcaption>
             </figure>
-            <figure class="gallery-item">
+            <figure class="gallery-item" tabindex="0">
               <img src="assets/ct-renan-sinalizacao.jpg" alt="Sinaliza&ccedil;&atilde;o com logo do CT Renan Silva" loading="lazy" />
               <figcaption>Identidade do CT</figcaption>
             </figure>
-            <figure class="gallery-item gallery-team">
+            <figure class="gallery-item gallery-team" tabindex="0">
               <img src="assets/renan-silva-equipe.jpg" alt="Renan Silva e equipe no CT Renan Silva" loading="lazy" />
               <figcaption>Equipe</figcaption>
             </figure>
@@ -641,6 +695,12 @@
       </svg>
       <span>WhatsApp</span>
     </a>
+
+    <div class="gallery-lightbox" aria-hidden="true" role="dialog" aria-label="Imagem ampliada da galeria">
+      <button class="lightbox-close" type="button" aria-label="Fechar imagem">Fechar</button>
+      <img src="" alt="" />
+      <p></p>
+    </div>
 
     <script src="script.js"></script>
   </body>
