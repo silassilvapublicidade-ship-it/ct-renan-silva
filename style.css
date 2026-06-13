@@ -1565,7 +1565,7 @@ h3 {
 
 .faq-list {
   display: grid;
-  gap: 12px;
+  gap: 9px;
 }
 
 .faq-list details {
@@ -1582,7 +1582,7 @@ h3 {
   justify-content: space-between;
   gap: 16px;
   cursor: pointer;
-  padding: 18px;
+  padding: 15px 16px;
   color: var(--white);
   font-family: "Poppins", Arial, sans-serif;
   font-weight: 900;
@@ -1592,9 +1592,9 @@ h3 {
 .faq-list summary::after {
   content: "+";
   display: inline-grid;
-  flex: 0 0 30px;
-  width: 30px;
-  height: 30px;
+  flex: 0 0 28px;
+  width: 28px;
+  height: 28px;
   place-items: center;
   background: rgba(225, 18, 27, 0.16);
   border: 1px solid rgba(225, 18, 27, 0.46);
@@ -1612,7 +1612,7 @@ h3 {
 
 .faq-list p {
   margin: 0;
-  padding: 0 18px 18px;
+  padding: 0 16px 16px;
   color: var(--muted);
 }
 
