@@ -87,7 +87,13 @@ const updateActiveNav = () => {
   });
 
   navItems.forEach((item) => {
-    item.classList.toggle("is-active", item.getAttribute("href") === `#${current?.id}`);
+    const isActive = item.getAttribute("href") === `#${current?.id}`;
+    item.classList.toggle("is-active", isActive);
+    if (isActive) {
+      item.setAttribute("aria-current", "page");
+    } else {
+      item.removeAttribute("aria-current");
+    }
   });
 };
 
@@ -142,7 +148,7 @@ const closeLightbox = () => {
 const setupReveal = () => {
   const revealItems = [
     ...document.querySelectorAll(
-      ".feature-card, .objective-card, .app-card, .gallery-item, .testimonial-card, .start-step, .contact-list > div"
+      ".feature-card, .objective-card, .app-card, .gallery-item, .testimonial-card, .trust-card, .about-trust > div, .start-step, .contact-list > div"
     ),
   ];
 
