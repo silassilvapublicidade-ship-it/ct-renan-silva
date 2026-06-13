@@ -820,67 +820,6 @@ h3 {
   margin-bottom: 30px;
 }
 
-.about-trust {
-  display: grid;
-  gap: 10px;
-  margin-top: 24px;
-}
-
-.about-trust div {
-  position: relative;
-  overflow: hidden;
-  padding: 16px;
-  background: rgba(255, 255, 255, 0.74);
-  border: 1px solid rgba(255, 255, 255, 0.78);
-  border-left: 4px solid var(--red);
-  border-radius: var(--radius);
-  box-shadow: var(--glass-shadow);
-  backdrop-filter: blur(18px) saturate(1.12);
-}
-
-.about-trust div::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(circle at 12% 8%, rgba(225, 18, 27, 0.12), transparent 34%),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.36), transparent 52%);
-}
-
-.about-trust strong,
-.about-trust p {
-  position: relative;
-  z-index: 1;
-}
-
-.about-trust strong {
-  display: block;
-  margin-bottom: 4px;
-  font-family: "Poppins", Arial, sans-serif;
-  font-size: 0.88rem;
-  font-weight: 900;
-  text-transform: uppercase;
-}
-
-.about-trust p {
-  margin: 0;
-  color: var(--muted-dark);
-  font-size: 0.94rem;
-  font-weight: 700;
-}
-
-.placeholder-note {
-  margin: 22px 0 0;
-  padding: 16px;
-  background: rgba(8, 8, 8, 0.68);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-left: 4px solid var(--red);
-  border-radius: var(--radius);
-  color: var(--white);
-  font-weight: 800;
-}
-
 .feature-grid,
 .objective-grid,
 .gallery-grid,

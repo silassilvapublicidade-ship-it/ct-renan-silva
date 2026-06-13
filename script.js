@@ -148,7 +148,7 @@ const closeLightbox = () => {
 const setupReveal = () => {
   const revealItems = [
     ...document.querySelectorAll(
-      ".feature-card, .objective-card, .app-card, .gallery-item, .testimonial-card, .trust-card, .about-trust > div, .start-step, .contact-list > div"
+      ".feature-card, .objective-card, .app-card, .gallery-item, .testimonial-card, .trust-card, .start-step, .contact-list > div"
     ),
   ];
 
